@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "06b376d27913f8b61348be98b9066f0c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -365,6 +365,48 @@
                 "trusted proxy"
             ],
             "time": "2019-01-10T14:06:47+00:00"
+        },
+        {
+            "name": "grambas/football-data",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grambas/football-data.git",
+                "reference": "1e3cc313e90e0911f4ade500268f880ffeb5d1ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grambas/football-data/zipball/1e3cc313e90e0911f4ade500268f880ffeb5d1ca",
+                "reference": "1e3cc313e90e0911f4ade500268f880ffeb5d1ca",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grambas\\FootballData\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mindaugas",
+                    "email": "email@mindaugasmilius.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "football-data.org API container for Laravel 5.2",
+            "homepage": "https://github.com/grambas/football-data",
+            "keywords": [
+                "footbal-data",
+                "grambas"
+            ],
+            "time": "2018-08-14T20:27:47+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -4938,7 +4980,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "grambas/football-data": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
