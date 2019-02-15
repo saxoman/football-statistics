@@ -15,6 +15,17 @@ class CreateRezulatisTable extends Migration
     {
         Schema::create('rezulatis', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('competitionId');
+            $table->text('competitionName');
+            $table->text('homeTeamName');
+            $table->text('awayTeamName');
+            $table->integer('homeTeamId');
+            $table->integer('awayTeamId');
+            $table->dateTime('utcDate');
+            $table->integer('halfTimeHome');
+            $table->integer('halfTimeAway');
+            $table->integer('fullTimeHome');
+            $table->integer('fullTimeAway');
 
             $table->timestamps();
         });

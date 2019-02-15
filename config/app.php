@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Grambas\FootballData\FootballDataServiceProvider::class,
+        App\Providers\FootballServiceProvider::class,
 
     ],
 
@@ -226,7 +226,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Football' => Grambas\FootballData\Facades\FootballDataFacade::class,
+        'Football'=> App\Facades\Football::class,
+
 
     ],
 

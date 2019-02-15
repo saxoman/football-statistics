@@ -14,8 +14,10 @@ class CreateLigesTable extends Migration
     public function up()
     {
         Schema::create('liges', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('idlige')->primary();
             $table->string("naziv");
+            $table->string("code");
+            $table->text("emblemUrl")->nullable();
             $table->timestamps();
         });
     }
