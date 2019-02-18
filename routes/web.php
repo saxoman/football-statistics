@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/lige', 'LigeController@loadLigeNames');
+
+Route::get('/konacan1', 'Games\KonacanIshodController@getKonacanIshod');
