@@ -4,18 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Rezulati
- * @package App
- */
-class Rezulati extends Model
+class Sheduled extends Model
 {
-    /**
-     * @var array
-     */
     protected $fillable=['matchesId','competitionId','competitionName','homeTeamName','awayTeamName','homeTeamId',
-        'awayTeamId','utcDate','halfTimeHome','halfTimeAway','fullTimeHome','fullTimeAway'
-        ];
+        'awayTeamId','utcDate'
+    ];
 
     public function setUtcDateAttribute($value)
     {

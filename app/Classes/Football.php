@@ -31,6 +31,9 @@ class Football
      */
     static $reqPrefs;
 
+    /**
+     * Football constructor.
+     */
     public function __construct()
     {
        $this->api_key =env('FootballData_API_KEY');
@@ -52,13 +55,20 @@ class Football
     }
 
     /**
-     * Funkcija rvaca reyultate odigranih meceva za 10 dana u nazad
+     * Funkcija vraca reyultate odigranih meceva za 10 dana u nazad
      * @param array $filter
      * @return mixed
      */
     public function getFinishedMatches(array $filter = ['areas' => ''])
     {
-        $uri = 'http://api.football-data.org/v2/matches?status=FINISHED&dateFrom=2019-02-05&dateTo=2019-02-15';
+        $uri = 'http://api.football-data.org/v2/matches?status=FINISHED&dateFrom='.date('Y-m-d', strtotime('-10 days')).'&dateTo='.date('Y-m-d').'';
+        $stream_context = stream_context_create(self::$reqPrefs);
+        $response = file_get_contents($uri, false, $stream_context);
+        return json_decode($response);
+    }
+    public function getSheduledMatches(array $filter = ['areas' => ''])
+    {
+        $uri = 'http://api.football-data.org/v2/matches?dateFrom='.date('Y-m-d').'&dateTo='.date('Y-m-d', strtotime('+5 days')).'&status=SCHEDULED';
         $stream_context = stream_context_create(self::$reqPrefs);
         $response = file_get_contents($uri, false, $stream_context);
         return json_decode($response);

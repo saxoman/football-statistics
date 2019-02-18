@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Classes\Football;
 use App\Lige;
-use Illuminate\Support\Facades\App;
 
 
+/**
+ * Class LigeController
+ * @package App\Http\Controllers
+ */
 class LigeController extends Controller
 {
+    /**
+     * Funkcija stronira u bazu sve lige koje su trenutno dostupne
+     */
     public function loadLigeNames()
     {
         $lige=new Football();
